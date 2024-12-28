@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ task.title }}</h1>
+<p>{{ task.description }}</p>
+<p><strong>Status:</strong> {{ task.get_status_display }}</p>
+<p><strong>Assigned To:</strong> {{ task.assigned_to }}</p>
+<p><strong>Deadline:</strong> {{ task.deadline }}</p>
+<a href="{% url 'task_update' task.pk %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'task_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}
